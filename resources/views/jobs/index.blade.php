@@ -12,9 +12,9 @@
         <section class="pt-10">
             <x-section-heading>Featured Cars</x-section-heading>
             <div class="grid lg:grid-cols-3 gap-8 mt-6">
-                <x-car-card/>
-                <x-car-card/>
-                <x-car-card/>
+                @foreach($featuredJobs as $job)
+                    <x-car-card :$job/>
+                @endforeach
             </div>
         </section>
 
@@ -22,26 +22,18 @@
         <section>
             <x-section-heading>Tags</x-section-heading>
             <div class="mt-6 space-x-1">
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
+                @foreach($tags as $tag)
+                    <x-tag :$tag/>
+                @endforeach
             </div>
         </section>
 
         <section>
             <x-section-heading>Recent Cars</x-section-heading>
             <div class="mt-6 space-y-6">
-                <x-car-card-wide/>
-                <x-car-card-wide/>
-                <x-car-card-wide/>
+                @foreach($jobs as $job)
+                    <x-car-card-wide :$job/>
+                @endforeach
             </div>
         </section>
     </div>
